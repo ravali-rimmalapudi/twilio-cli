@@ -1,8 +1,8 @@
 name: Cli Build
 on:
   push:
-     branches: [ '*' ]
-   pull_request:
+     branches: [ '**' ]
+  pull_request:
      branches: [ main ]
 
 jobs:
