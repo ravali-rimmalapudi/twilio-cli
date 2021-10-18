@@ -24,6 +24,7 @@ jobs:
 #         run: npm test
   test1:
     runs-on: ubuntu-latest
+    name: cli build
 #     needs: [test]
     strategy:
       matrix:
