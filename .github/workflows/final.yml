@@ -26,7 +26,7 @@ jobs:
       INPUT_OWNER: ravali-rimmalapudi
       INPUT_REPO: twilio-cli
       INPUT_GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-      INPUT_REF: ${{steps.get-branch.outputs.branch}}
+      INPUT_REF: ${{needs.get-branch.outputs.branch}}
       INPUT_WAITING_INTERVAL: 10
       INPUT_PROPAGATE_FAILURE: true
       INPUT_TRIGGER_WORKFLOW: false
@@ -61,7 +61,7 @@ jobs:
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEB_HOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEB_HOOK1 }}
           SLACK_COLOR: "#36a64f"
           SLACK_USERNAME: CLI Release Bot
           SLACK_ICON_EMOJI: ":ship:"
