@@ -14,13 +14,16 @@ jobs:
       INPUT_OWNER: ravali-rimmalapudi
       INPUT_REPO: twilio-cli
       INPUT_GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-      INPUT_REF: main
+      INPUT_REF: ${{steps.extract_branch.outputs.branch}}
       INPUT_WAITING_INTERVAL: 10
       INPUT_PROPAGATE_FAILURE: true
       INPUT_TRIGGER_WORKFLOW: false
     name: Wait for Docker, Homebrew, RPM and Platform executables Release
     runs-on: ubuntu-latest
     steps:
+      - name: Extract branch name
+        id: extract_branch
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - name: Checkout cli repo
         uses: actions/checkout@v2
       - name: Wait for Docker Release
