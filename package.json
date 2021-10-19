@@ -24,9 +24,6 @@
     "/src",
     "/welcome.js"
   ],
-    "resolutions": {
-    "ansi-regex": "5.0.1"
-  },
   "scripts": {
     "postinstall": "node welcome.js",
     "lint": "eslint --ext js --ext jsx src/ test/",
@@ -35,7 +32,6 @@
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "posttest": "npm run lint && npm audit",
-    "preinstall": "npm install --package-lock-only --ignore-scripts && npx force-resolutions",
     "version": "oclif-dev readme && git add README.md"
   },
   "dependencies": {
