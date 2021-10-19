@@ -19,6 +19,8 @@ jobs:
         id: extract_branch
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
   wait-for-releases:
+    name: Wait for Docker, Homebrew, RPM and Platform executables Release
+    runs-on: ubuntu-latest
     needs: [get-branch]
     env:
       INPUT_OWNER: twilio
@@ -28,8 +30,6 @@ jobs:
       INPUT_WAITING_INTERVAL: 10
       INPUT_PROPAGATE_FAILURE: true
       INPUT_TRIGGER_WORKFLOW: false
-    name: Wait for Docker, Homebrew, RPM and Platform executables Release
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout cli repo
         uses: actions/checkout@v2
