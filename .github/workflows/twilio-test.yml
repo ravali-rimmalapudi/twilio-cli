@@ -1,0 +1,14 @@
+name: Cli Build
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+ 
+   steps:
+  	 - name: Install twilio cli through homebrew
+  	 - run: |
+        brew tap twilio/brew && brew install twilio
+        twilio --version
+     
