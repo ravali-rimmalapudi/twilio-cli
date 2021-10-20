@@ -5,10 +5,8 @@ on:
 jobs:
   test:
     runs-on: macos-latest
- 
-   steps:
-  	 - name: Install twilio cli through homebrew
-  	 - run: |
-        brew tap twilio/brew && brew install twilio
-        twilio --version
-     
+    steps:
+      - name: Install twilio cli through homebrew
+        run: |
+          brew tap twilio/brew && brew install twilio
+          twilio --version
