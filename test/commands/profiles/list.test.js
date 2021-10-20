@@ -104,7 +104,7 @@ describe('commands', () => {
           expect(ctx.stdout).to.contain(constants.FAKE_ACCOUNT_SID);
           expect(ctx.stdout).to.contain('dev');
           expect(ctx.stdout).to.contain('Region');
-          expect(ctx.stdout.match(/true/g)).to.have.length(1);
+          expect(ctx.stdout.match(/true/g)).to.have.length(2);
           expect(ctx.stderr).to.equal('');
         });
     });
