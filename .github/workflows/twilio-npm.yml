@@ -1,0 +1,19 @@
+name: twilio test
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    strategy:
+  	matrix:
+    	node-version: [10.x, 14.x, 16.x]
+ 
+	  steps:
+    	  uses: actions/setup-node@v2
+    	  with:
+      	node-version: ${{ matrix.node-version }}
+  	    - name: Install twilio cli globally
+  	    - run: |
+              npm install -g twilio-cli
+              twilio --version
