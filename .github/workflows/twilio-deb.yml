@@ -1,0 +1,13 @@
+name: twilio deb
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install twilio cli through .deb
+        run: |
+          gh release download 2.31.0 --pattern '*.deb'
+          sudo dpkg -i twilio-2.31.0.deb
+          twilio --version
