@@ -13,13 +13,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release download 2.31.0 --pattern '*.exe'
-          ls
-          iwr -useb get.scoop.sh | iex
-          scoop install gsudo
           ./twilio-2.31.0.exe /S
           sleep 100
           $env:Path += ";C:\Program Files (x86)\twilio-cli\bin"
           $Env:Path
-          cd C:\"Program Files (x86)"
-          dir
           twilio --version
