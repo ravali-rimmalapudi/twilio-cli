@@ -19,6 +19,6 @@ jobs:
           gsudo ./twilio-2.31.0.exe /S
           sleep 100
           $Env:Path
-          cd C:\Program Files (x86)
+          cd C:\"Program Files (x86)"
           dir
           twilio --version
