@@ -14,5 +14,5 @@ jobs:
         run: |
           gh release download 2.31.0 --pattern '*.pkg'
           ls
-          installer -pkg twilio-2.31.0.pkg -target ~/
+          sudo installer -pkg twilio-2.31.0.pkg -target ~/
           twilio --version
