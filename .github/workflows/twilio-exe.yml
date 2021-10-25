@@ -16,4 +16,5 @@ jobs:
           ls
           ./twilio-2.31.0.exe /S
           sleep 20
+          $Env:Path
           twilio --version
