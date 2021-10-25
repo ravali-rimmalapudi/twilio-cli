@@ -14,7 +14,5 @@ jobs:
         run: |
           gh release download 2.31.0 --pattern '*.exe'
           ls
-          & "D:\a\twilio-cli\twilio-cli\twilio-2.31.0.exe" /SilentMode
-          [System.Diagnostics.Process]::Start("D:\a\twilio-cli\twilio-cli\twilio-2.31.0.exe /SilentMode")
-          D:\a\twilio-cli\twilio-cli\twilio-2.31.0.exe /silent
+          ./twilio-2.31.0.exe /silent
           twilio --version
