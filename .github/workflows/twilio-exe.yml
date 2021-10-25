@@ -15,4 +15,3 @@ jobs:
           gh release download 2.31.0 --pattern '*.exe'
           ls
           ./twilio-2.31.0.exe
-          twilio --version
