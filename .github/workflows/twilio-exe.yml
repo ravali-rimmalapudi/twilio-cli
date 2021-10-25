@@ -14,6 +14,6 @@ jobs:
         run: |
           gh release download 2.31.0 --pattern '*.exe'
           ls
-          ./twilio-2.31.0.exe
+          ./twilio-2.31.0.exe /S
           sleep 20
           twilio --version
