@@ -1,0 +1,17 @@
+name: twilio exe
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout cli repo
+        uses: actions/checkout@v2
+      - name: Install twilio cli through .exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release download 2.31.0 --pattern '*.exe'
+          twilio-2.31.0.exe /silent
+          twilio --version
