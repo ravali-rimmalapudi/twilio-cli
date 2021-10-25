@@ -14,7 +14,8 @@ jobs:
         run: |
           gh release download 2.31.0 --pattern '*.exe'
           ls
-          sudo ./twilio-2.31.0.exe /S
+          scoop install gsudo
+          gsudo ./twilio-2.31.0.exe /S
           sleep 100
           $Env:Path
           twilio --version
