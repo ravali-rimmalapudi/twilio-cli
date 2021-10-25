@@ -14,6 +14,7 @@ jobs:
         run: |
           gh release download 2.31.0 --pattern '*.exe'
           ls
+          iwr -useb get.scoop.sh | iex
           scoop install gsudo
           gsudo ./twilio-2.31.0.exe /S
           sleep 100
