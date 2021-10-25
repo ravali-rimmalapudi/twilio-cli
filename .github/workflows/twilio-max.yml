@@ -1,0 +1,18 @@
+name: twilio pkg
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout cli repo
+        uses: actions/checkout@v2
+      - name: Install twilio cli through .pkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release download 2.31.0 --pattern '*.pkg'
+          ls
+          installer -pkg twilio-2.31.0.pkg -target ~/
+          twilio --version
