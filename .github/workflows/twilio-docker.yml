@@ -4,10 +4,23 @@ on:
 
 jobs:
   test:
+#     vm:
+#       runs-on: ubuntu-latest
+#       steps:
+#         - run: |
+#             docker pull twilio/twilio-cli
+#           name: Run on VM
+#     container:
+#       runs-on: ubuntu-latest
+#       container: docker.io/twilio/twilio-cli:latest
+#       steps:
+#         - run: |
+#             echo This job does specify a container.
+#             echo It runs in the container instead of the VM.
+#           name: Run in container
     runs-on: ubuntu-latest
     steps:
       - run: |
           docker pull twilio/twilio-cli
       - uses: docker://twilio/twilio-cli:latest
-        with:
-          args: -c 'twilio --version'
+      - run: twilio --version
