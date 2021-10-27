@@ -10,5 +10,4 @@ jobs:
           docker pull twilio/twilio-cli
       - uses: docker://twilio/twilio-cli:latest
         with:
-          entrypoint: /usr/bin/bash
           args: -c 'twilio --version'
