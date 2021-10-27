@@ -23,4 +23,7 @@ jobs:
       - run: |
           docker pull twilio/twilio-cli
       - uses: docker://twilio/twilio-cli:latest
-      - run: twilio --version
+        with:
+          args: twilio --version
+            
+#       - run: twilio --version
