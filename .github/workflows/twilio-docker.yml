@@ -4,6 +4,7 @@ on:
 
 jobs:
   test:
+    runs-on: ubuntu-latest
     container: archlinux
     steps:
       - run: |
