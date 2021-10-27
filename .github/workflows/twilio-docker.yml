@@ -1,0 +1,11 @@
+name: twilio Docker
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    container: archlinux
+    steps:
+      - run: |
+          docker pull twilio/twilio-cli
+          twilio --version
