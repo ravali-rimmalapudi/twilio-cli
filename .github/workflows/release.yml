@@ -48,7 +48,7 @@ jobs:
       tag-name: '2.31.0'
     steps:
       - name: Checkout cli
-        uses: actions/heckout@v2
+        uses: actions/checkout@v2
         with:
           persist-credentials: false
       - name: Run git and npm update
