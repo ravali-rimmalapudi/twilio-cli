@@ -12,6 +12,8 @@ on:
       homebrew-prerelease:
         description: 'HomeBrew prerelease'
         default: 'false'
+env:
+  version: '2.31.0'
 
 jobs:
 #   test:
@@ -57,7 +59,7 @@ jobs:
           npm install
       - name: Semantic Release runs
         id: semantic-release
-        run: npx semantic-release -t "\${version}"
+        run: npx semantic-release -t \${version}
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
