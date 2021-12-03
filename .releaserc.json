@@ -1,4 +1,5 @@
 {
+  "tagName": "${version}",
   "branches": [
     "main",
     {
