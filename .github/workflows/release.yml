@@ -4,6 +4,7 @@ on:
     inputs:
       change-log:
         description: 'Open API Changelog.'
+        default: "---------------------------\n**Conversations**\n- Add `Service Webhook Configuration` resource\n\n**Flex**\n- Adding `flex_insights_drilldown` and `flex_url` objects to Flex Configuration\n\n**Messaging**\n- Update us_app_to_person endpoints to remove beta feature flag based access\n\n**Supersim**\n- Add IP Commands resource\n\n**Verify**\n- Add optional `factor_friendly_name` parameter to the create access token endpoint.\n\n**Video**\n- Add maxParticipantDuration param to Rooms\n\n**Twiml**\n- Unrevert Add supported SSML children to `<emphasis>`, `<lang>`, `<p>`, `<prosody>`, `<s>`, and `<w>`.\n- Revert Add supported SSML children to `<emphasis>`, `<lang>`, `<p>`, `<prosody>`, `<s>`, and `<w>`."
       version-type:
         description: 'Version to upgrade, Major: 0, Minor:1, Patch: 2'
       homebrew-branch:
