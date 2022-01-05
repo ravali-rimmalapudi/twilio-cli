@@ -14,7 +14,6 @@ const updateChangeLog = async () => {
         return;
       }
       const fd = fs.openSync(cliChangelogFilename, 'w+');
-      changes = changes + "\n";
       const insert = Buffer.from(changes);
       fs.writeSync(fd, insert, 0, insert.length, 0);
       fs.writeSync(fd, data, 0, data.length, insert.length);
