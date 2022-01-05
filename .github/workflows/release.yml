@@ -32,17 +32,17 @@ jobs:
 #           cache: 'npm'
 #       - name: Run tests
 #         run: npm test
-#   update-api-definitions-changelog:
-#     runs-on: ubuntu-latest
+  update-api-definitions-changelog:
+    runs-on: ubuntu-latest
 #     needs: [test]
-#     steps:
-#       - name: Checkout cli
-#         uses: actions/checkout@v2
-#         with:
-#           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-#       - name: Update Changelog
-#         run: |
-#           bash .github/scripts/commit-api-spec-change-log.sh "${{ github.event.inputs.change-log }}" ${{ github.event.inputs.version-type }}
+    steps:
+      - name: Checkout cli
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+      - name: Update Changelog
+        run: |
+          bash .github/scripts/commit-api-spec-change-log.sh "${{ github.event.inputs.change-log }}" ${{ github.event.inputs.version-type }}
   release:
     runs-on: ubuntu-latest
 #     needs: [update-api-definitions-changelog]
