@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#Functionality from convictional/trigger-workflow-and-wait.
+#Link: https://github.com/convictional/trigger-workflow-and-wait
+
 usage_docs() {
   echo ""
   echo "    owner: twilio"
@@ -84,6 +87,10 @@ trigger_workflow() {
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer ${INPUT_GITHUB_TOKEN}" \
     --data "{\"ref\":\"${ref}\",\"inputs\":${inputs}}"
+
+  # Sleep after triggering workflow so it can be polled for status
+  echo "Sleeping for $wait_interval seconds"
+  sleep $wait_interval
 }
 
 wait_for_workflow_to_finish() {
