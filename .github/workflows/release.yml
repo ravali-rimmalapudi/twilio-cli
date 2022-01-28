@@ -122,7 +122,7 @@ jobs:
         id: extract_branch
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - name: Invoke Oclif workflow
-        if: ${{needs.release.outputs.tag-name != '' && github.event.inputs.draft-release != 'true'}}
+        if: ${{needs.release.outputs.tag-name != '' && github.event.inputs.draft-release != 'true' && steps.extract_branch.outputs.branch == 'main'}}
         run: node .github/scripts/trigger-workflow.js
         env:
           WORKFLOW_NAME: 'oclif-release.yml'
