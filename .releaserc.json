@@ -1,10 +1,10 @@
 {
   "branches": [
-    "main",
     {
       "name": "rc/*",
       "prerelease": "rc"
-    }
+    },
+    "main"
   ],
   "plugins": [
     [
