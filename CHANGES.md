@@ -1,3 +1,12 @@
+## [2.32.0](https://github.com/ravali-rimmalapudi/twilio-cli/compare/2.31.0...2.32.0) (2022-01-31)
+
+
+### Library - Fixes
+
+* Added rc changes ([#9](https://github.com/ravali-rimmalapudi/twilio-cli/issues/9)) ([3e4826c](https://github.com/ravali-rimmalapudi/twilio-cli/commit/3e4826cad7777b509a4f25212dd8b033a924ff4f))
+* run release ([5833524](https://github.com/ravali-rimmalapudi/twilio-cli/commit/5833524848353c58fff874debe987641f1da0e3b))
+* Updated package ([93f45f2](https://github.com/ravali-rimmalapudi/twilio-cli/commit/93f45f22139c36aa9c3f852200d056987bb546a0))
+
 ## [2.32.0-rc.1](https://github.com/ravali-rimmalapudi/twilio-cli/compare/2.31.0...2.32.0-rc.1) (2022-01-31)
 
 
